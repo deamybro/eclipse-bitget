@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECLIPSE // Official Demo Walkthrough & Voiceover</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg-dark: #07090E;
+      --card-bg: rgba(17, 20, 29, 0.85);
+      --accent-cyan: #00F2FE;
+      --accent-emerald: #00E676;
+      --accent-purple: #C084FC;
+      --accent-amber: #F59E0B;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #E2E8F0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Video Player HUD Container */
+    .video-showcase-wrapper {
+      max-width: 1200px;
+      margin: 24px auto 80px auto;
+      padding: 0 20px;
+    }
+
+    .video-viewport-frame {
+      background: #0B0E17;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 242, 254, 0.1);
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Top Player Bar */
+    .video-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: rgba(14, 18, 28, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .video-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rec-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+
+    .rec-dot {
+      width: 8px;
+      height: 8px;
+      background: #EF4444;
+      border-radius: 50%;
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    /* Scene Stage Area */
+    .scene-stage {
+      min-height: 520px;
+      padding: 36px 40px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .scene-slide {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .scene-slide.active-slide {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .scene-header-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .scene-heading {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin: 0 0 16px 0;
+      line-height: 1.2;
+    }
+
+    .scene-grid-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .scene-card-visual {
+      background: rgba(17, 22, 34, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .metric-callout-row {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .metric-callout {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .metric-callout-val {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent-emerald);
+      display: block;
+    }
+
+    .metric-callout-lbl {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Subtitles / Narration Caption Bar */
+    .caption-banner {
+      background: rgba(10, 13, 20, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .caption-speaker-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00F2FE, #00E676);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #07090E;
+      flex-shrink: 0;
+    }
+
+    .caption-text-content {
+      flex: 1;
+    }
+
+    .caption-speaker-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .caption-active-speech {
+      font-size: 1.05rem;
+      line-height: 1.45;
+      color: #F1F5F9;
+      font-style: italic;
+    }
+
+    /* Video Controller Bar */
+    .video-controller-bar {
+      background: #090C14;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .timeline-scrubber-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .timeline-progress-rail {
+      flex: 1;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #00F2FE, #00E676);
+      border-radius: 3px;
+      transition: width 0.2s linear;
+    }
+
+    .time-timestamp {
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #94A3B8;
+    }
+
+    .btn-player {
+      background: linear-gradient(135deg, #00F2FE, #00C4FE);
+      color: #05070D;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-player:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.35);
+    }
+
+    .scene-nav-pills {
+      display: flex;
+      gap: 8px;
+    }
+
+    .nav-pill-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94A3B8;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .nav-pill-btn.active, .nav-pill-btn:hover {
+      background: rgba(0, 242, 254, 0.12);
+      border-color: rgba(0, 242, 254, 0.3);
+      color: #00F2FE;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="eclipse-top-appbar">
+    <div class="appbar-left">
+      <div class="appbar-logo-mark">
+        <span class="logo-orb"></span>
+        <span class="logo-text">ECLIPSE</span>
+      </div>
+      <span class="appbar-badge">VIDEO DEMO STUDIO</span>
+      <span class="appbar-badge" style="color: #00E676; border-color: rgba(0,230,118,0.3);">🎙️ SYNCHRONIZED VOICEOVER</span>
+    </div>
+    <div class="appbar-right">
+      <a href="index.html" class="nav-pill-btn" style="text-decoration: none;">← Back to Terminal</a>
+    </div>
+  </header>
+
+  <div class="video-showcase-wrapper">
+    <div class="video-viewport-frame">
+      
+      <!-- Top HUD -->
+      <div class="video-topbar">
+        <div class="video-title-group">
+          <div class="rec-indicator">
+            <span class="rec-dot"></span>
+            <span>OFFICIAL DEMO</span>
+          </div>
+          <span style="font-weight: 600; font-size: 0.95rem;">ECLIPSE // Judge Video Walkthrough (3 Minutes)</span>
+        </div>
+        <div class="scene-nav-pills" id="scenePills">
+          <button class="nav-pill-btn active" data-idx="0">1. Thesis</button>
+          <button class="nav-pill-btn" data-idx="1">2. Parallax</button>
+          <button class="nav-pill-btn" data-idx="2">3. Shockwave</button>
+          <button class="nav-pill-btn" data-idx="3">4. Carry</button>
+          <button class="nav-pill-btn" data-idx="4">5. Proof</button>
+          <button class="nav-pill-btn" data-idx="5">6. Verdict</button>
+        </div>
+      </div>
+
+      <!-- Main Dynamic Scene Viewport -->
+      <div class="scene-stage">
+        
+        <!-- Slide 1: Thesis -->
+        <div class="scene-slide active-slide" id="slide-0">
+          <div class="scene-header-tag">Scene 1 · Core Thesis & Terminal</div>
+          <h2 class="scene-heading">Three Edges. One Risk Budget.<br><span style="color: var(--accent-cyan);">Only Proven Alpha Gets Capital.</span></h2>
+          <div class="scene-grid-content">
+            <div class="scene-card-visual">
+              <p style="color: #94A3B8; margin-top: 0;">Tokenized U.S. stocks create multiple price-discovery regimes across 24/7 crypto hours versus NYSE cash hours. Naive bots chase noise; ECLIPSE isolates mathematically proven alpha.</p>
+              <div class="metric-callout-row">
+                <div class="metric-callout">
+                  <span class="metric-callout-val">$101,130.97</span>
+                  <span class="metric-callout-lbl">Portfolio Equity</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: var(--accent-cyan);">+16.72%</span>
+                  <span class="metric-callout-lbl">Ann. Net Return</span>
+                </div>
+              </div>
+            </div>
+            <div class="scene-card-visual" style="border-color: rgba(0, 242, 254, 0.25);">
+              <div style="font-size: 0.8rem; color: #64748B; margin-bottom: 8px;">VERIFIABLE STATUS</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #38BDF8;">🔒 SHA-256 SEALED OUT-OF-SAMPLE</div>
+              <div style="font-family: monospace; font-size: 0.75rem; color: #94A3B8; margin-top: 8px; word-break: break-all;">
+                4bff375a85deeff4d06b7d7af0925bc4bef71a3f86e1ac425cff52694ffd2c5e
+              </div>
+              <div style="margin-top: 16px; font-size: 0.85rem; color: #A7F3D0;">
+                ✓ 30 Days Strictly Untouched Forward Test
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: PARALLAX -->
+        <div class="scene-slide" id="slide-1">
+          <div class="scene-header-tag">Scene 2 · Engine 1</div>
+          <h2 class="scene-heading">PARALLAX // Price-Discovery & Information Handoff</h2>
+          <div class="scene-grid-content">
+            <div class="scene-card-visual">
+              <h3 style="color: var(--accent-cyan); margin-top: 0;">Discrete State-Space Kalman Filter</h3>
+              <p style="color: #94A3B8;">Fuses rToken Spot, USDT Perp, and Cash Equity. Dynamically inflates observation noise variance when the cash market is closed ($t \notin [09:30, 16:00]$ ET) to eliminate phantom arbitrage.</p>
+              <div class="metric-callout-row">
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: #00F2FE;">±1.96 σ</span>
+                  <span class="metric-callout-lbl">Uncertainty Corridor</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val">0.42</span>
+                  <span class="metric-callout-lbl">Lead-Lag Metric</span>
+                </div>
+              </div>
+            </div>
+            <div class="scene-card-visual">
+              <div style="color: #F87171; font-weight: 700; font-size: 0.9rem;">CASE A: NOISE (FILTERED)</div>
+              <p style="font-size: 0.85rem; color: #94A3B8;">Inside Uncertainty Envelope → <span style="color: #FCA5A5;">NO TRADE (Saves Fees)</span></p>
+              <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 12px 0;">
+              <div style="color: var(--accent-emerald); font-weight: 700; font-size: 0.9rem;">CASE B: PROVEN ALPHA (EXECUTED)</div>
+              <p style="font-size: 0.85rem; color: #94A3B8;">Perp leads spot, expected edge > roundtrip costs → <span style="color: var(--accent-emerald);">LONG LAGGARD</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: SHOCKWAVE -->
+        <div class="scene-slide" id="slide-2">
+          <div class="scene-header-tag">Scene 3 · Engine 2 & AI Firewall</div>
+          <h2 class="scene-heading">SHOCKWAVE // Dislocation Alpha + Qwen 3.8 Max</h2>
+          <div class="scene-grid-content">
+            <div class="scene-card-visual">
+              <h3 style="color: var(--accent-purple); margin-top: 0;">Rolling Ridge Factor Decomposition</h3>
+              <p style="color: #94A3B8;">Decomposes rToken returns against equity and crypto betas. Filters idiosyncratic residuals by Ornstein-Uhlenbeck mean-reversion half-life ($t_{1/2} \le 48\text{h}$).</p>
+              <div class="metric-callout-row">
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: var(--accent-purple);">14.2h</span>
+                  <span class="metric-callout-lbl">OU Half-Life</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val">72h</span>
+                  <span class="metric-callout-lbl">Rolling Ridge Window</span>
+                </div>
+              </div>
+            </div>
+            <div class="scene-card-visual" style="border-color: rgba(192, 132, 252, 0.3);">
+              <div style="font-size: 0.8rem; color: var(--accent-purple); font-weight: 700;">QWEN 3.8 MAX EVENT FIREWALL</div>
+              <p style="font-size: 0.88rem; color: #E2E8F0; margin-top: 8px;">
+                "Naive bots buy massive dips. When Qwen detects an earnings collapse or fraud filing, it halts fading:"
+              </p>
+              <div style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 10px; color: #FCA5A5; font-family: monospace; font-size: 0.85rem; font-weight: 700;">
+                ⚡ EVENT FIREWALL: BLOCK_TRADE (FUNDAMENTAL REPRICING)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4: CARRY -->
+        <div class="scene-slide" id="slide-3">
+          <div class="scene-header-tag">Scene 4 · Engine 3 & Exchange Mechanics</div>
+          <h2 class="scene-heading">CARRY // Basis Harvest & Empirical Multiplier Hedge</h2>
+          <div class="scene-grid-content">
+            <div class="scene-card-visual">
+              <h3 style="color: var(--accent-emerald); margin-top: 0;">Exact Contract Multiplier Discovery</h3>
+              <p style="color: #94A3B8;">Empirical API audit revealed Bitget stock perpetuals use <code style="color: #38BDF8;">sizeMultiplier = 0.01</code> (100 contracts = 1 share). Naive bots mis-hedge by 100x; ECLIPSE executes exact delta neutrality.</p>
+              <div class="metric-callout-row">
+                <div class="metric-callout">
+                  <span class="metric-callout-val">0.01</span>
+                  <span class="metric-callout-lbl">Contract Multiplier</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: var(--accent-emerald);">+18.2%</span>
+                  <span class="metric-callout-lbl">Annualized Net Yield</span>
+                </div>
+              </div>
+            </div>
+            <div class="scene-card-visual">
+              <div style="font-size: 0.8rem; color: #64748B; margin-bottom: 8px;">NET WATERFALL HARVEST</div>
+              <p style="font-size: 0.85rem; color: #94A3B8;">
+                + Expected 8h Funding Rate<br>
+                + Basis Convergence Yield<br>
+                - Roundtrip Exchange Fees (6.0 bps)<br>
+                - Ex-Dividend Corporate Action Adjustment<br>
+                = <strong style="color: var(--accent-emerald);">Clean Positive Net Carry</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 5: PROOF -->
+        <div class="scene-slide" id="slide-4">
+          <div class="scene-header-tag">Scene 5 · Quantitative Proof & Integrity</div>
+          <h2 class="scene-heading">Zero Lookahead · Deflated Sharpe · Shadow Gate</h2>
+          <div class="scene-grid-content">
+            <div class="scene-card-visual">
+              <h3 style="color: #38BDF8; margin-top: 0;">Verified Out-of-Sample Results</h3>
+              <div class="metric-callout-row">
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: var(--accent-emerald);">2.50</span>
+                  <span class="metric-callout-lbl">OOS Sharpe Ratio</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: #38BDF8;">1.0000</span>
+                  <span class="metric-callout-lbl">Deflated Sharpe (DSR)</span>
+                </div>
+                <div class="metric-callout">
+                  <span class="metric-callout-val" style="color: #F87171;">0.78%</span>
+                  <span class="metric-callout-lbl">Max Drawdown</span>
+                </div>
+              </div>
+            </div>
+            <div class="scene-card-visual">
+              <div style="font-size: 0.8rem; color: #64748B; margin-bottom: 8px;">COUNTERFACTUAL SHADOW BOOK</div>
+              <div style="font-size: 1.8rem; font-weight: 800; color: var(--accent-purple);">8,712 Signals Intercepted</div>
+              <p style="font-size: 0.85rem; color: #94A3B8; margin-top: 8px;">
+                By refusing to deploy capital when edges sat within uncertainty bands or below fees, the gate prevented negative friction drag and preserved portfolio alpha.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 6: VERDICT -->
+        <div class="scene-slide" id="slide-5">
+          <div class="scene-header-tag">Scene 6 · Institutional Conclusion</div>
+          <h2 class="scene-heading">Built for Production Autonomous Trading on Bitget</h2>
+          <div style="background: rgba(17, 22, 34, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 32px; text-align: center; margin-top: 20px;">
+            <blockquote style="font-size: 1.25rem; font-style: italic; color: #F8FAFC; margin: 0 0 20px 0;">
+              "A signal does not deserve capital simply because it exists. It deserves capital only after it survives uncertainty, cost, regime shifts, robustness testing, and out-of-sample proof."
+            </blockquote>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+              <span class="badge-pill badge-emerald">✓ All Tests Passing</span>
+              <span class="badge-pill badge-sealed">✓ SHA-256 Proven</span>
+              <span class="badge-pill badge-emerald">✓ Live API Integrated</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Subtitles / Narration Caption Bar -->
+      <div class="caption-banner">
+        <div class="caption-speaker-avatar">AI</div>
+        <div class="caption-text-content">
+          <div class="caption-speaker-name" id="speakerLabel">ECLIPSE Audio Narrator</div>
+          <div class="caption-active-speech" id="captionText">
+            "Click 'Start Video Demo with Voice-Over' below to begin the automated walkthrough."
+          </div>
+        </div>
+      </div>
+
+      <!-- Controller Bar -->
+      <div class="video-controller-bar">
+        <button class="btn-player" id="playBtn">
+          <span id="playIcon">▶</span>
+          <span id="playText">Play Demo with Voice-Over</span>
+        </button>
+
+        <div class="timeline-scrubber-wrapper">
+          <span class="time-timestamp" id="currentTime">00:00</span>
+          <div class="timeline-progress-rail" id="progressRail">
+            <div class="timeline-progress-fill" id="progressFill"></div>
+          </div>
+          <span class="time-timestamp" id="totalTime">02:45</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Audio Element -->
+  <audio id="audioNarrator" preload="auto"></audio>
+
+  <script>
+    const sceneAudios = [
+      { file: 'audio/scene1_intro.wav', caption: 'Tokenized stocks create multiple price discovery systems for the same company across different trading clocks. The hard problem is not finding a difference, it is knowing when that difference is real alpha rather than noise, new information, or execution friction. Welcome to ECLIPSE: Three edges, one risk budget, where only proven alpha gets capital. Built specifically for Bitget rTokens and stock perpetuals under a cryptographically sealed out-of-sample lock.' },
+      { file: 'audio/scene2_parallax.wav', caption: 'Our first alpha engine is PARALLAX: Price-Discovery and Information-Handoff Alpha. Using a state-space discrete Kalman filter, it tracks latent fair value across the spot and perpetual triad. When the underlying cash equity market closes, observation noise automatically inflates to eliminate phantom arbitrage. Only when divergences breach our conformal uncertainty corridor and exceed round-trip fees does ECLIPSE emit an execution order.' },
+      { file: 'audio/scene3_shockwave.wav', caption: 'Our second engine is SHOCKWAVE: Cross-Asset Residual and Liquidity-Dislocation Alpha. When an rToken experiences an abnormal move, naive bots rush to fade it. SHOCKWAVE isolates idiosyncratic residuals using a 72-hour rolling Ridge factor model, while our Qwen 3.8 Max Event Firewall inspects live corporate filings and earnings releases. If a structural shock is detected, the AI firewall activates an immediate BLOCK TRADE directive, preserving capital.' },
+      { file: 'audio/scene4_carry.wav', caption: 'Our third engine is CARRY: Same-Underlying Funding and Basis Alpha. Through empirical auditing of live Bitget market mechanics, we discovered the 0.01 size multiplier, meaning 100 perpetual contracts equals 1 share. By delta-hedging with exact contract sizing and filtering corporate dividend dates, CARRY harvests pure 8-hour funding yields and basis convergence without unhedged basis risk.' },
+      { file: 'audio/scene5_proof.wav', caption: 'Under the hood, our CHRONOS engine enforces strict backward as-of joins with zero lookahead bias. Our Universal Transaction Account engine dynamically models tiered collateral haircuts. And across our 30-day sealed out-of-sample test, ECLIPSE delivered an annualized return of 16.7 percent, a Sharpe ratio of 2.50, and a maximum drawdown of just 0.78 percent, with a Deflated Sharpe ratio of 1.0. Over 8,700 false signals were filtered by our shadow gate.' },
+      { file: 'audio/scene6_outro.wav', caption: 'A signal does not deserve capital simply because it exists. It deserves capital only after it survives uncertainty, cost, regime shifts, robustness testing, and out-of-sample proof. ECLIPSE is fully tested, verifiable, and ready for institutional deployment on Bitget. Thank you.' }
+    ];
+
+    let currentScene = 0;
+    let isPlaying = false;
+    const audio = document.getElementById('audioNarrator');
+    const playBtn = document.getElementById('playBtn');
+    const playIcon = document.getElementById('playIcon');
+    const playText = document.getElementById('playText');
+    const captionText = document.getElementById('captionText');
+    const progressFill = document.getElementById('progressFill');
+    const currentTimeLbl = document.getElementById('currentTime');
+    const scenePills = document.querySelectorAll('.nav-pill-btn[data-idx]');
+
+    function showScene(idx) {
+      currentScene = idx;
+      document.querySelectorAll('.scene-slide').forEach((s, i) => {
+        s.classList.toggle('active-slide', i === idx);
+      });
+      scenePills.forEach((p, i) => {
+        p.classList.toggle('active', i === idx);
+      });
+      captionText.innerText = sceneAudios[idx].caption;
+      audio.src = sceneAudios[idx].file;
+      if (isPlaying) {
+        audio.play().catch(e => console.log('Autoplay deferred:', e));
+      }
+    }
+
+    scenePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        showScene(parseInt(pill.getAttribute('data-idx')));
+      });
+    });
+
+    playBtn.addEventListener('click', () => {
+      if (!isPlaying) {
+        isPlaying = true;
+        playIcon.innerText = '⏸';
+        playText.innerText = 'Pause Walkthrough';
+        if (!audio.src || audio.src.endsWith('.html')) {
+          showScene(0);
+        }
+        audio.play().catch(e => console.log(e));
+      } else {
+        isPlaying = false;
+        playIcon.innerText = '▶';
+        playText.innerText = 'Resume Walkthrough';
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener('ended', () => {
+      if (currentScene < sceneAudios.length - 1) {
+        showScene(currentScene + 1);
+      } else {
+        isPlaying = false;
+        playIcon.innerText = '▶';
+        playText.innerText = 'Replay Demo Video';
+      }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (audio.duration) {
+        const pct = ((currentScene + (audio.currentTime / audio.duration)) / sceneAudios.length) * 100;
+        progressFill.style.width = `${pct}%`;
+        const mins = Math.floor(audio.currentTime / 60);
+        const secs = Math.floor(audio.currentTime % 60);
+        currentTimeLbl.innerText = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+    });
+
+    // Initialize with scene 0
+    showScene(0);
+  </script>
+</body>
+</html>
