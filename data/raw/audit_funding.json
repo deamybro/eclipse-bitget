@@ -1,0 +1,74 @@
+{
+  "NVDAUSDT": {
+    "records_count": 270,
+    "earliest": "2026-06-21T00:00:00+00:00",
+    "latest": "2026-09-18T16:00:00+00:00",
+    "days_span": 89.66666666666667,
+    "mean_rate": 2.6837037037037036e-05,
+    "sample_latest": [
+      {
+        "symbol": "NVDAUSDT",
+        "fundingRate": "0.000264",
+        "fundingTime": "1789747200000"
+      },
+      {
+        "symbol": "NVDAUSDT",
+        "fundingRate": "0.000045",
+        "fundingTime": "1789718400000"
+      },
+      {
+        "symbol": "NVDAUSDT",
+        "fundingRate": "0.000076",
+        "fundingTime": "1789689600000"
+      }
+    ]
+  },
+  "TSLAUSDT": {
+    "records_count": 270,
+    "earliest": "2026-06-21T00:00:00+00:00",
+    "latest": "2026-09-18T16:00:00+00:00",
+    "days_span": 89.66666666666667,
+    "mean_rate": 2.087037037037037e-05,
+    "sample_latest": [
+      {
+        "symbol": "TSLAUSDT",
+        "fundingRate": "0.000176",
+        "fundingTime": "1789747200000"
+      },
+      {
+        "symbol": "TSLAUSDT",
+        "fundingRate": "0.000004",
+        "fundingTime": "1789718400000"
+      },
+      {
+        "symbol": "TSLAUSDT",
+        "fundingRate": "0",
+        "fundingTime": "1789689600000"
+      }
+    ]
+  },
+  "BTCUSDT": {
+    "records_count": 270,
+    "earliest": "2026-06-21T00:00:00+00:00",
+    "latest": "2026-09-18T16:00:00+00:00",
+    "days_span": 89.66666666666667,
+    "mean_rate": 4.6077777777777783e-05,
+    "sample_latest": [
+      {
+        "symbol": "BTCUSDT",
+        "fundingRate": "0.000019",
+        "fundingTime": "1789747200000"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "fundingRate": "0.000024",
+        "fundingTime": "1789718400000"
+      },
+      {
+        "symbol": "BTCUSDT",
+        "fundingRate": "0.000064",
+        "fundingTime": "1789689600000"
+      }
+    ]
+  }
+}

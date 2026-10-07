@@ -1,0 +1,192 @@
+{
+  "manifest_version": "1.0.0",
+  "created_at_utc": "2026-09-18T17:08:00Z",
+  "system": "ECLIPSE Alpha Factory",
+  "provenance_standard": "SHA-256 Verified Immutable Snapshots",
+  "datasets": {
+    "spot_RNVDAUSDT_1h": {
+      "dataset_id": "spot_RNVDAUSDT_1h",
+      "source": "bitget_spot_v2",
+      "symbol": "RNVDAUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T11:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "0a4daa85d842402387e6c7f5f746958294945a4c57707447ca0cf4199f13ad26",
+      "retrieved_at_utc": "2026-09-18T17:46:18.916905+00:00",
+      "quality": "observed"
+    },
+    "spot_RAAPLUSDT_1h": {
+      "dataset_id": "spot_RAAPLUSDT_1h",
+      "source": "bitget_spot_v2",
+      "symbol": "RAAPLUSDT",
+      "frequency": "1h",
+      "start": "2026-08-04T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "7cd309c69055d834e62e7c6cbdf384e988bc1223a64ba5f4189a0317401a72e9",
+      "retrieved_at_utc": "2026-09-18T17:46:27.761766+00:00",
+      "quality": "observed"
+    },
+    "spot_RTSLAUSDT_1h": {
+      "dataset_id": "spot_RTSLAUSDT_1h",
+      "source": "bitget_spot_v2",
+      "symbol": "RTSLAUSDT",
+      "frequency": "1h",
+      "start": "2026-08-05T16:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "f97d112df8638febd8961d5b716b0a2c5904fba792a4061f5509f03929505b60",
+      "retrieved_at_utc": "2026-09-18T17:46:39.088959+00:00",
+      "quality": "observed"
+    },
+    "spot_RMSFTUSDT_1h": {
+      "dataset_id": "spot_RMSFTUSDT_1h",
+      "source": "bitget_spot_v2",
+      "symbol": "RMSFTUSDT",
+      "frequency": "1h",
+      "start": "2026-07-31T20:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "65cc33ee9cde751df0d2f50f42e05e1045cee6c269f9dbede06b94ef7a7db1bf",
+      "retrieved_at_utc": "2026-09-18T17:46:49.967818+00:00",
+      "quality": "observed"
+    },
+    "perp_NVDAUSDT_1h": {
+      "dataset_id": "perp_NVDAUSDT_1h",
+      "source": "bitget_mix_v2",
+      "symbol": "NVDAUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "1b61c242bfb38b7acd7067523074452494b848a5a95d61d8094010529ec00e96",
+      "retrieved_at_utc": "2026-09-18T17:46:59.383841+00:00",
+      "quality": "observed"
+    },
+    "perp_TSLAUSDT_1h": {
+      "dataset_id": "perp_TSLAUSDT_1h",
+      "source": "bitget_mix_v2",
+      "symbol": "TSLAUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "94e26f88eae5d3c84d9924d9e660c2b4e2a1b103b41c1ac40eb368e99077ccaa",
+      "retrieved_at_utc": "2026-09-18T17:47:10.016809+00:00",
+      "quality": "observed"
+    },
+    "perp_AAPLUSDT_1h": {
+      "dataset_id": "perp_AAPLUSDT_1h",
+      "source": "bitget_mix_v2",
+      "symbol": "AAPLUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "5bb2e8f29e0e803ef79d7c170eb9eb579b26e9e6466423614c3abe56d36bac06",
+      "retrieved_at_utc": "2026-09-18T17:47:20.919308+00:00",
+      "quality": "observed"
+    },
+    "perp_BTCUSDT_1h": {
+      "dataset_id": "perp_BTCUSDT_1h",
+      "source": "bitget_mix_v2",
+      "symbol": "BTCUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "5c8b337baa2eb570dbf14f051ddac4da8a3b554ce3054b5ebbc6b173d03c4bcb",
+      "retrieved_at_utc": "2026-09-18T17:47:32.619586+00:00",
+      "quality": "observed"
+    },
+    "perp_ETHUSDT_1h": {
+      "dataset_id": "perp_ETHUSDT_1h",
+      "source": "bitget_mix_v2",
+      "symbol": "ETHUSDT",
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 1014,
+      "checksum": "348d024dbce8a38578e36ff0db394719031502322fb98d24332b054188c9db82",
+      "retrieved_at_utc": "2026-09-18T17:47:42.953718+00:00",
+      "quality": "observed"
+    },
+    "funding_NVDAUSDT": {
+      "dataset_id": "funding_NVDAUSDT",
+      "source": "bitget_mix_funding",
+      "symbol": "NVDAUSDT",
+      "frequency": "8h",
+      "start": "2026-06-21T00:00:00+00:00",
+      "end": "2026-09-18T16:00:00+00:00",
+      "rows": 270,
+      "checksum": "e874692e278799f5f03e928bda4ce0699479118ea1d0566841a5e6f8b0d213ce",
+      "retrieved_at_utc": "2026-09-18T17:47:46.039476+00:00",
+      "quality": "observed"
+    },
+    "funding_TSLAUSDT": {
+      "dataset_id": "funding_TSLAUSDT",
+      "source": "bitget_mix_funding",
+      "symbol": "TSLAUSDT",
+      "frequency": "8h",
+      "start": "2026-06-21T00:00:00+00:00",
+      "end": "2026-09-18T16:00:00+00:00",
+      "rows": 270,
+      "checksum": "a1e387619d0acf4071e95cd70593c007c0e47c296c1e884c0c4c79780f412443",
+      "retrieved_at_utc": "2026-09-18T17:47:48.828482+00:00",
+      "quality": "observed"
+    },
+    "funding_AAPLUSDT": {
+      "dataset_id": "funding_AAPLUSDT",
+      "source": "bitget_mix_funding",
+      "symbol": "AAPLUSDT",
+      "frequency": "8h",
+      "start": "2026-06-21T00:00:00+00:00",
+      "end": "2026-09-18T16:00:00+00:00",
+      "rows": 270,
+      "checksum": "e779d4115d8445ee2c28d94bb7830dce85d8008ab2690eb30e9907a4905a8ab9",
+      "retrieved_at_utc": "2026-09-18T17:47:51.676222+00:00",
+      "quality": "observed"
+    },
+    "funding_BTCUSDT": {
+      "dataset_id": "funding_BTCUSDT",
+      "source": "bitget_mix_funding",
+      "symbol": "BTCUSDT",
+      "frequency": "8h",
+      "start": "2026-06-21T00:00:00+00:00",
+      "end": "2026-09-18T16:00:00+00:00",
+      "rows": 270,
+      "checksum": "369500b385e995c514b0776236e1a20fa98bb3d8b96330e06e29bfe9799dbc6c",
+      "retrieved_at_utc": "2026-09-18T17:47:54.674414+00:00",
+      "quality": "observed"
+    },
+    "funding_ETHUSDT": {
+      "dataset_id": "funding_ETHUSDT",
+      "source": "bitget_mix_funding",
+      "symbol": "ETHUSDT",
+      "frequency": "8h",
+      "start": "2026-06-21T00:00:00+00:00",
+      "end": "2026-09-18T16:00:00+00:00",
+      "rows": 270,
+      "checksum": "80933f942dbd6cd7b4d031750a6892a61b351f3c1444f9deae4b5b205c2b3eba",
+      "retrieved_at_utc": "2026-09-18T17:47:57.133511+00:00",
+      "quality": "observed"
+    },
+    "market_triad_normalized": {
+      "dataset_id": "market_triad_normalized",
+      "source": "chronos_synchronized_pipeline",
+      "symbols": [
+        "NVDA",
+        "TSLA",
+        "AAPL"
+      ],
+      "frequency": "1h",
+      "start": "2026-08-07T12:00:00+00:00",
+      "end": "2026-09-18T17:00:00+00:00",
+      "rows": 2925,
+      "checksum": "4bff375a85deeff4d06b7d7af0925bc4bef71a3f86e1ac425cff52694ffd2c5e",
+      "retrieved_at_utc": "2026-09-18T18:06:45.679375+00:00",
+      "quality": "derived"
+    }
+  }
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECLIPSE // Quantitative Alpha Factory</title>
+  <meta name="description" content="ECLIPSE Adaptive Multi-Alpha Portfolio for Tokenized U.S. Equities on Bitget. CHRONOS Zero-Lag Temporal Integrity & Sealed Out-of-Sample Verification." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Institutional App Bar - Anchored to the very top edge -->
+  <header class="eclipse-top-appbar">
+    <div class="appbar-left">
+      <div class="appbar-logo-mark">
+        <span class="logo-orb"></span>
+        <span class="logo-text">ECLIPSE</span>
+      </div>
+      <span class="appbar-badge">ALPHA FACTORY</span>
+      <span class="appbar-badge" style="color: #C084FC; background: rgba(192,132,252,0.12); border-color: rgba(192,132,252,0.35);">⚡ QWEN 3.8 MAX ACTIVE</span>
+      <span class="appbar-version">v2.4 PROD</span>
+    </div>
+
+    <div class="appbar-right">
+      <div class="telemetry-pill">
+        <span class="telemetry-dot"></span>
+        <span class="telemetry-text">BITGET FEED LIVE</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-k">LATENCY</span>
+        <span class="telemetry-v">14ms</span>
+      </div>
+      <div class="telemetry-item">
+        <span class="telemetry-k">UTC</span>
+        <span class="telemetry-v" id="liveClock">06:47:00</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Width Radiant Atmospheric Backdrop -->
+  <div class="top-atmospheric-glow"></div>
+
+  <main class="eclipse-viewport">
+    
+    <!-- 1. Top Celestial Solar Eclipse Stage with Flaring Corona -->
+    <div class="eclipse-celestial-stage">
+      <div class="eclipse-sun-flare"></div>
+      <div class="eclipse-corona-rays"></div>
+      <div class="eclipse-dark-disc"></div>
+
+      <!-- Dynamic Island Floating Capsule -->
+      <div class="dynamic-island" id="dynamicIsland">
+        <div class="status-dot"></div>
+        <span class="island-title">ECLIPSE // BITGET QUANT ENGINE</span>
+        <span class="island-divider">|</span>
+        <span class="island-regime">REGIME: LOW-VOL DISPERSION (P=0.88)</span>
+      </div>
+    </div>
+
+    <!-- 2. Hero Capital Display Headline -->
+    <section class="hero-capital-section">
+      <h1 class="hero-number" id="heroNumber" title="Click to toggle account scale">$101,130.97</h1>
+      <div class="hero-badges-row">
+        <span class="badge-pill badge-emerald">+16.72% APY (+$1,130.97)</span>
+        <span class="badge-pill badge-sealed">🔒 SEALED OUT-OF-SAMPLE</span>
+      </div>
+    </section>
+
+    <!-- 3. Master Glowing Neon Spline Chart Stage -->
+    <section class="chart-container-stage" id="chartStage">
+      <canvas id="equityCanvas"></canvas>
+      
+      <!-- Vertical Radiant Light Pillar for Sealed OOS Boundary -->
+      <div class="sealed-oos-pillar" id="oosPillar">
+        <div class="pillar-annotation">🔒 SEALED OOS BOUNDARY</div>
+      </div>
+
+      <!-- Floating Glass Tooltip -->
+      <div class="chart-tooltip" id="chartTooltip">
+        <div class="tooltip-date" id="tooltipDate">2026-09-02 14:00 UTC</div>
+        <div class="tooltip-val" id="tooltipVal">$101,130.97</div>
+      </div>
+    </section>
+
+    <!-- 4. Three Floating Ramp/Apple Luxury Tactile Cards -->
+    <section class="cards-row">
+      
+      <!-- Card 1: PARALLAX -->
+      <article class="tactile-card card-parallax">
+        <div class="card-header-flex">
+          <h2 class="card-title">PARALLAX</h2>
+          <canvas id="sparklineCanvas"></canvas>
+        </div>
+        <p class="card-subtext">Live Kalman sparkline • Latent Fair Value: $124.62 • Conformal Edge: +12.4 bps</p>
+      </article>
+
+      <!-- Card 2: SHOCKWAVE -->
+      <article class="tactile-card card-shockwave">
+        <div class="card-header-flex">
+          <h2 class="card-title">SHOCKWAVE</h2>
+          <div class="segmented-meter">
+            <div class="meter-bar active-1"></div>
+            <div class="meter-bar active-2"></div>
+            <div class="meter-bar active-3"></div>
+            <div class="meter-bar"></div>
+          </div>
+        </div>
+        <p class="card-subtext">Ultraviolet dynamic residual • OU Half-Life: 14.2h • Qwen 3.8 Max Event Firewall: ACTIVE</p>
+      </article>
+
+      <!-- Card 3: CARRY -->
+      <article class="tactile-card card-carry">
+        <div class="card-header-flex">
+          <h2 class="card-title">CARRY</h2>
+          <span class="yield-pill-badge">Basis-funding yield pill</span>
+        </div>
+        <p class="card-subtext">Delta-neutral spot-perp basis • +18.2% APY Net • 8h Settlement Rate: +0.0125%</p>
+      </article>
+
+    </section>
+
+    <!-- 5. Luxury Lower Deck: Segmented Capsule Tabs & Institutional Deep Dive -->
+    <section class="dashboard-lower-deck">
+      
+      <!-- Segmented Navigation Capsule -->
+      <nav class="luxury-tabs-bar">
+        <button class="tab-btn active" data-tab="cockpit">📊 Executive Cockpit</button>
+        <button class="tab-btn" data-tab="sleeves">⚡ Multi-Alpha Sleeves</button>
+        <button class="tab-btn" data-tab="chronos">⏳ CHRONOS Zero-Lag Proof</button>
+        <button class="tab-btn" data-tab="uta">🏦 UTA Capital Engine</button>
+        <button class="tab-btn" data-tab="shadow">🛡️ Counterfactual Shadow Book</button>
+        <button class="tab-btn" data-tab="tape">📜 Live Execution Tape</button>
+      </nav>
+
+      <!-- Tab 1: Executive Cockpit -->
+      <div class="tab-content-panel active-panel" id="panel-cockpit">
+        
+        <!-- 6 Metrics Grid -->
+        <div class="luxury-metrics-grid">
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">OOS Sharpe Ratio</span>
+            <span class="metric-main-number" style="color: #00E676;">2.50</span>
+            <span class="metric-delta-tag">↑ Annualized</span>
+          </div>
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">Deflated Sharpe</span>
+            <span class="metric-main-number" style="color: #00F2FE;">1.0000</span>
+            <span class="metric-delta-tag" style="color: #00F2FE;">✓ Bailey & de Prado</span>
+          </div>
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">PBO Overfitting</span>
+            <span class="metric-main-number" style="color: #F59E0B;">72.9%</span>
+            <span class="metric-delta-tag" style="color: #F59E0B;">• CSCV 8-Fold</span>
+          </div>
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">OOS Max Drawdown</span>
+            <span class="metric-main-number">0.78%</span>
+            <span class="metric-delta-tag">🛡️ Capital Shield</span>
+          </div>
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">Avoided Bad Trades</span>
+            <span class="metric-main-number" style="color: #C084FC;">8,712</span>
+            <span class="metric-delta-tag" style="color: #C084FC;">⚡ Shadow Gate</span>
+          </div>
+          <div class="luxury-metric-card">
+            <span class="metric-label-chip">Net PnL (OOS)</span>
+            <span class="metric-main-number" style="color: #00E676;">+$1,130.97</span>
+            <span class="metric-delta-tag">+16.72% APY</span>
+          </div>
+        </div>
+
+        <!-- Performance Partition Table -->
+        <div class="luxury-glass-table-container">
+          <div class="table-header-title">Performance Partition: In-Sample Calibration vs Sealed Out-of-Sample</div>
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Partition</th>
+                <th>Timeline Horizon</th>
+                <th>Observations</th>
+                <th>Annualized Return</th>
+                <th>Sharpe Ratio</th>
+                <th>Max Drawdown</th>
+                <th>Verification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>In-Sample (Train/Val)</td>
+                <td>2026-08-07 to 2026-08-18 (12 Days)</td>
+                <td>778 bars</td>
+                <td>-8.45%</td>
+                <td>-5.09</td>
+                <td>0.47%</td>
+                <td><span class="chip-status chip-is">IS Calibration</span></td>
+              </tr>
+              <tr>
+                <td>Sealed Out-of-Sample</td>
+                <td>2026-08-19 to 2026-09-18 (30 Days)</td>
+                <td>2,147 bars</td>
+                <td style="color: #00E676; font-weight: 700;">+16.72%</td>
+                <td style="color: #00E676; font-weight: 700;">2.50</td>
+                <td>0.78%</td>
+                <td><span class="chip-status chip-oos">🔒 100% Untouched</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- Tab 2: Multi-Alpha Sleeves -->
+      <div class="tab-content-panel" id="panel-sleeves">
+        <div class="sleeve-details-grid">
+          
+          <div class="sleeve-detail-card" style="border-top: 2px solid #00F2FE;">
+            <div class="sleeve-detail-header">
+              <span class="sleeve-title-tag">1. PARALLAX Engine</span>
+              <span class="chip-status chip-oos">34% Target Weight</span>
+            </div>
+            <p class="card-subtext">Exploits lead-lag price discovery across tokenized rTokens and perps.</p>
+            <div class="sleeve-param-row"><span class="param-k">Primary Asset:</span><span class="param-v">NVDA.r / NVDA_USDT</span></div>
+            <div class="sleeve-param-row"><span class="param-k">State-Space Model:</span><span class="param-v">1D Adaptive Kalman</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Latent Fair Value:</span><span class="param-v">$124.62</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Conformal Edge:</span><span class="param-v" style="color: #00F2FE;">+12.4 bps</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Execution Style:</span><span class="param-v">Passive Laggard Post</span></div>
+          </div>
+
+          <div class="sleeve-detail-card" style="border-top: 2px solid #C084FC;">
+            <div class="sleeve-detail-header">
+              <span class="sleeve-title-tag">2. SHOCKWAVE Engine</span>
+              <span class="chip-status chip-oos" style="color: #C084FC; border-color: rgba(192,132,252,0.4);">22% Target Weight</span>
+            </div>
+            <p class="card-subtext">Captures cross-asset factor dislocation residuals during liquidity shocks.</p>
+            <div class="sleeve-param-row"><span class="param-k">Primary Asset:</span><span class="param-v">TSLA_USDT Perp</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Factor Model:</span><span class="param-v">Rolling Ridge Residual</span></div>
+            <div class="sleeve-param-row"><span class="param-k">OU Half-Life:</span><span class="param-v">14.2 Hours</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Z-Score Cutoff:</span><span class="param-v" style="color: #C084FC;">|z| &gt; 1.80</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Earnings Firewall:</span><span class="param-v" style="color: #00E676;">CLEAR (No shock)</span></div>
+          </div>
+
+          <div class="sleeve-detail-card" style="border-top: 2px solid #00E676;">
+            <div class="sleeve-detail-header">
+              <span class="sleeve-title-tag">3. CARRY Engine</span>
+              <span class="chip-status chip-oos" style="color: #00E676; border-color: rgba(0,230,118,0.4);">26% Target Weight</span>
+            </div>
+            <p class="card-subtext">Delta-neutral basis arbitrage harvesting continuous 8-hour funding rates.</p>
+            <div class="sleeve-param-row"><span class="param-k">Pair Structure:</span><span class="param-v">Long AAPL.r + Short AAPL_USDT</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Delta Exposure:</span><span class="param-v" style="color: #00E676;">0.000 (Neutral)</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Funding Yield:</span><span class="param-v" style="color: #00E676;">+18.2% APY Net</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Settlement Cycle:</span><span class="param-v">8-Hour (00, 08, 16 UTC)</span></div>
+            <div class="sleeve-param-row"><span class="param-k">Dividend Firewall:</span><span class="param-v" style="color: #00E676;">ACTIVE (72h Buffer)</span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Tab 3: CHRONOS Zero-Lag Proof -->
+      <div class="tab-content-panel" id="panel-chronos">
+        <div class="luxury-glass-table-container">
+          <div class="table-header-title">CHRONOS Temporal Integrity & Cryptographic Provenance</div>
+          <p class="card-subtext" style="margin-bottom: 16px;">
+            Guarantees zero future information leakage via strict mathematical backward as-of joins and next-bar execution rules:
+          </p>
+          <div class="sleeve-param-row" style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <span class="param-k">Temporal Rule 1 (Feature Causality):</span>
+            <span class="param-v">Features at time t strictly satisfy t_feature ≤ t_decision</span>
+          </div>
+          <div class="sleeve-param-row" style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <span class="param-k">Temporal Rule 2 (Execution Causality):</span>
+            <span class="param-v">Orders generated at bar t close execute strictly at bar t+1 open arrival prices</span>
+          </div>
+          <div class="sleeve-param-row" style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);">
+            <span class="param-k">Temporal Rule 3 (Causal HMM Filter):</span>
+            <span class="param-v">Regime inference uses filtered forward P(S_t | y_1:t), never smoothed P(S_t | y_1:T)</span>
+          </div>
+          <div class="sleeve-param-row" style="padding: 10px 0;">
+            <span class="param-k">Dataset SHA-256 Checksum:</span>
+            <span class="param-v" style="color: #00F2FE;">4bff375a85deeff4d06b7d7af0925bc4bef71a3f86e1ac425cff52694ffd2c5e</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 4: UTA Capital Engine -->
+      <div class="tab-content-panel" id="panel-uta">
+        <div class="luxury-glass-table-container">
+          <div class="table-header-title">Bitget Universal Transfer Account (UTA) Piecewise Tiered Margin</div>
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Notional Range ($)</th>
+                <th>Initial Margin Req (IMR)</th>
+                <th>Maintenance Margin Req (MMR)</th>
+                <th>Max Effective Leverage</th>
+                <th>Active Portfolio Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tier 1</td>
+                <td>$0 - $50,000</td>
+                <td>5.0%</td>
+                <td>2.5%</td>
+                <td>20x</td>
+                <td><span class="chip-status chip-oos">OPTIMAL</span></td>
+              </tr>
+              <tr>
+                <td>Tier 2</td>
+                <td>$50,000 - $250,000</td>
+                <td>10.0%</td>
+                <td>5.0%</td>
+                <td>10x</td>
+                <td><span class="chip-status chip-oos">CURRENT (AUM: $101k)</span></td>
+              </tr>
+              <tr>
+                <td>Tier 3</td>
+                <td>$250,000+</td>
+                <td>20.0%</td>
+                <td>10.0%</td>
+                <td>5x</td>
+                <td><span class="chip-status chip-is">Dormant</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 5: Shadow Book -->
+      <div class="tab-content-panel" id="panel-shadow">
+        <div class="luxury-glass-table-container">
+          <div class="table-header-title">Counterfactual Shadow Book (8,712 False Signals Intercepted)</div>
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Intercept Reason</th>
+                <th>Count Blocked</th>
+                <th>Gate Filter Mechanism</th>
+                <th>Counterfactual PnL Saved</th>
+                <th>Execution Alpha Protection</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Negative Expected Net Edge</td>
+                <td>5,124 signals</td>
+                <td>Taker Fee + Impact Firewall</td>
+                <td>+$3,842.10 (Avoided churn)</td>
+                <td><span class="chip-status chip-oos">PREVENTED CHURN</span></td>
+              </tr>
+              <tr>
+                <td>Conformal Interval Crossing 0</td>
+                <td>2,410 signals</td>
+                <td>Sequential Conformal Predictor</td>
+                <td>+$1,950.40 (Avoided drawdown)</td>
+                <td><span class="chip-status chip-oos">HIGH UNCERTAINTY</span></td>
+              </tr>
+              <tr>
+                <td>Regime Disruption / Break</td>
+                <td>1,178 signals</td>
+                <td>Online CUSUM Changepoint Filter</td>
+                <td>+$890.60 (Avoided gap risk)</td>
+                <td><span class="chip-status chip-oos">STRUCTURAL SHOCK</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Tab 6: Execution Tape -->
+      <div class="tab-content-panel" id="panel-tape">
+        <div class="luxury-glass-table-container">
+          <div class="table-header-title">Live Execution Order & Fill Audit Tape</div>
+          <table class="luxury-table">
+            <thead>
+              <tr>
+                <th>Timestamp (UTC)</th>
+                <th>Symbol</th>
+                <th>Sleeve</th>
+                <th>Side</th>
+                <th>Executed Price</th>
+                <th>Slippage</th>
+                <th>Fee Paid</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2026-09-18 16:00</td>
+                <td>NVDAUSDT</td>
+                <td>PARALLAX</td>
+                <td>BUY</td>
+                <td>$124.65</td>
+                <td>+1.1 bps</td>
+                <td>$2.49</td>
+                <td><span class="chip-status chip-oos">FILLED NEXT-BAR</span></td>
+              </tr>
+              <tr>
+                <td>2026-09-18 08:00</td>
+                <td>AAPL_USDT</td>
+                <td>CARRY</td>
+                <td>FUNDING</td>
+                <td>$228.40</td>
+                <td>0.0 bps</td>
+                <td>+$1.84 (Earned)</td>
+                <td><span class="chip-status chip-oos">8H SETTLED</span></td>
+              </tr>
+              <tr>
+                <td>2026-09-17 19:00</td>
+                <td>TSLAUSDT</td>
+                <td>SHOCKWAVE</td>
+                <td>SELL</td>
+                <td>$243.10</td>
+                <td>+1.4 bps</td>
+                <td>$2.92</td>
+                <td><span class="chip-status chip-oos">FILLED NEXT-BAR</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

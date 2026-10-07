@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETED",
+  "total_rtokens_discovered": 1678,
+  "test_symbol": "RNVDAUSDT",
+  "granularity_support": {
+    "1min": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1789752360000
+    },
+    "5min": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1789750200000
+    },
+    "15min": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1789744500000
+    },
+    "30min": {
+      "supported": false,
+      "error": "{\"code\":\"48001\",\"msg\":\"Parameter validation failed null\",\"requestTime\":1789752944449,\"data\":null}"
+    },
+    "1h": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1789718400000
+    },
+    "4h": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1789617600000
+    },
+    "1day": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1788969600000
+    },
+    "1week": {
+      "supported": true,
+      "count": 10,
+      "latest_ts": 1783872000000
+    }
+  },
+  "hourly_bars_retrieved": 15000,
+  "earliest_timestamp": "2026-08-07T11:00:00+00:00",
+  "latest_timestamp": "2026-09-18T17:00:00+00:00",
+  "days_span": 42.25,
+  "satisfies_60_days": false
+}

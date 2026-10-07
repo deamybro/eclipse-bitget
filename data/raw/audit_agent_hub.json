@@ -1,0 +1,10 @@
+{
+  "status": "OPTIONAL_PAPER_STANDBY",
+  "found_tools": {
+    "agent-hub": null,
+    "bitget": null,
+    "agy": null
+  },
+  "mode": "PAPER_TRADING_MOCK_VALIDATED",
+  "description": "Paper trading execution adapter will simulate against Bitget testnet/paper endpoints without risking capital."
+}

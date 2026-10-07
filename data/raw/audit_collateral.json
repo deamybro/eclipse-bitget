@@ -1,0 +1,50 @@
+{
+  "status": "VERIFIED_PIECEWISE",
+  "tiers": [
+    {
+      "tier": 1,
+      "min_notional": 0.0,
+      "max_notional": 100000.0,
+      "ratio": 0.9
+    },
+    {
+      "tier": 2,
+      "min_notional": 100000.0,
+      "max_notional": 500000.0,
+      "ratio": 0.8
+    },
+    {
+      "tier": 3,
+      "min_notional": 500000.0,
+      "max_notional": 2000000.0,
+      "ratio": 0.7
+    },
+    {
+      "tier": 4,
+      "min_notional": 2000000.0,
+      "max_notional": Infinity,
+      "ratio": 0.5
+    }
+  ],
+  "test_results": [
+    {
+      "nominal": 50000.0,
+      "effective": 45000.0,
+      "average_ratio": 0.9,
+      "marginal_ratio": 0.9
+    },
+    {
+      "nominal": 250000.0,
+      "effective": 210000.0,
+      "average_ratio": 0.84,
+      "marginal_ratio": 0.8
+    },
+    {
+      "nominal": 1000000.0,
+      "effective": 760000.0,
+      "average_ratio": 0.76,
+      "marginal_ratio": 0.7
+    }
+  ],
+  "anti_lookahead_rule": "Current published UTA schedule is strictly segregated from historical OOS backtests without contemporaneous schedule proofs."
+}

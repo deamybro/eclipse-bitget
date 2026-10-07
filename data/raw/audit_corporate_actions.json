@@ -1,0 +1,17 @@
+{
+  "status": "VERIFIED",
+  "firewall_test": {
+    "raw_basis": -0.00418,
+    "raw_carry_pnl": 0.3515999999999999,
+    "adjusted_carry_pnl": -0.24840000000000007,
+    "naive_trade_signal": true,
+    "firewall_trade_signal": false,
+    "firewall_blocked_trade": true
+  },
+  "mechanics": {
+    "cash_dividend_spot_long": "Receives dividend credit",
+    "cash_dividend_perp_long": "Ex-date settlement credit or cash adjustment",
+    "cash_dividend_perp_short": "Ex-date settlement debit",
+    "stock_split": "Multiplies position size, divides strike/entry proportionally with zero cash PnL"
+  }
+}

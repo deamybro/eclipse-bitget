@@ -1,0 +1,75 @@
+{
+  "spot_depth": {
+    "accessible": true,
+    "bids_count": 50,
+    "asks_count": 50,
+    "best_bid": 219.51,
+    "best_ask": 219.54,
+    "spread_bps": 1.3664935774802378,
+    "top_5_bids": [
+      [
+        "219.51",
+        "202.2348"
+      ],
+      [
+        "219.49",
+        "0.4627"
+      ],
+      [
+        "219.44",
+        "178.2000"
+      ],
+      [
+        "219.41",
+        "196.2000"
+      ],
+      [
+        "219.39",
+        "379.8000"
+      ]
+    ],
+    "top_5_asks": [
+      [
+        "219.54",
+        "0.7784"
+      ],
+      [
+        "219.56",
+        "1.2285"
+      ],
+      [
+        "220.04",
+        "78.7200"
+      ],
+      [
+        "220.08",
+        "112.3200"
+      ],
+      [
+        "220.11",
+        "82.5600"
+      ]
+    ]
+  },
+  "perp_depth": {
+    "accessible": true,
+    "bids_count": 50,
+    "asks_count": 50,
+    "best_bid": 220.13,
+    "best_ask": 220.14,
+    "spread_bps": 0.4542563823017582
+  },
+  "whitelist_status": {
+    "l2_snapshot_public": true,
+    "l3_historical_tick_archives": false,
+    "capacity_model": "CALIBRATED_BAR_IMPACT_PROXY",
+    "impact_formula": "impact_bps = alpha * volatility * sqrt(order_notional / bar_turnover)",
+    "calibrated_alpha": 0.15,
+    "stress_multipliers": [
+      1.0,
+      1.25,
+      1.5,
+      2.0
+    ]
+  }
+}

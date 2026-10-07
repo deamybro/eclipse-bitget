@@ -1,0 +1,7 @@
+{
+  "base_url": "https://hackathon.bitgetops.com/v1",
+  "model": "qwen3.8-max",
+  "key_present": true,
+  "status": "CONNECTED",
+  "sample_response": "{\n  \"company\": \"NVDA\",\n  \"event_type\": \"earnings_report\",\n  \"metric\": \"revenue\",\n  \"period\": \"Q2\",\n  \"actual\": 30000000000,\n  \"expected\": 28700000000,\n  \"yoy_change\": \"122%\",\n  \"surprise_direction\": \"beat\",\n  \"sentiment\": \"positive\"\n}"
+}

@@ -1,0 +1,106 @@
+{
+  "run_id": "EXP-309e40d2-1789793725",
+  "run_timestamp_utc": "2026-09-19T04:55:25.666689+00:00",
+  "dataset_checksum": "4bff375a85deeff4d06b7d7af0925bc4bef71a3f86e1ac425cff52694ffd2c5e",
+  "initial_cash": 100000.0,
+  "final_equity": 101130.9711898718,
+  "net_pnl": 1130.9711898717942,
+  "is_metrics": {
+    "total_return": -0.0026488991814588372,
+    "annualized_return": -0.08450187373570558,
+    "annualized_volatility": 0.024437715775191892,
+    "sharpe": -5.094660846415707,
+    "sortino": -5.5149134757010225,
+    "max_drawdown": 0.00473461316303918,
+    "calmar": -17.847682762209715,
+    "win_rate": 0.3978102189781022
+  },
+  "oos_metrics": {
+    "total_return": 0.014058291283828859,
+    "annualized_return": 0.1672312138028906,
+    "annualized_volatility": 0.05095831003536631,
+    "sharpe": 2.49677066830884,
+    "sortino": 3.4314955380045986,
+    "max_drawdown": 0.007820104942854393,
+    "calmar": 21.384778724190628,
+    "win_rate": 0.508819538670285
+  },
+  "oos_is_ratio": 0.0,
+  "deflated_sharpe": 1.0,
+  "pbo": 0.7285714285714285,
+  "shadow_summary": {
+    "total_rejected": 8712,
+    "resolved_trades": 8712,
+    "avoided_loss_ratio": 0.0,
+    "avg_counterfactual_return": 0.0,
+    "filter_alpha_saved_pct": -0.0
+  },
+  "cost_stress": [
+    {
+      "Stress Multiplier": "1.00x",
+      "Net Annual Return (%)": 16.72312138028906,
+      "Stressed Sharpe": 2.49677066830884,
+      "Sharpe Decay (%)": 0.0,
+      "Alpha Survives": true
+    },
+    {
+      "Stress Multiplier": "1.25x",
+      "Net Annual Return (%)": 15.97312138028906,
+      "Stressed Sharpe": 2.349591533153164,
+      "Sharpe Decay (%)": 5.89477988602638,
+      "Alpha Survives": true
+    },
+    {
+      "Stress Multiplier": "1.50x",
+      "Net Annual Return (%)": 15.223121380289061,
+      "Stressed Sharpe": 2.202412397997489,
+      "Sharpe Decay (%)": 11.789559772052725,
+      "Alpha Survives": true
+    },
+    {
+      "Stress Multiplier": "2.00x",
+      "Net Annual Return (%)": 13.723121380289061,
+      "Stressed Sharpe": 1.9080541276861374,
+      "Sharpe Decay (%)": 23.579119544105474,
+      "Alpha Survives": true
+    }
+  ],
+  "capacity": [
+    {
+      "AUM ($)": "$100,000",
+      "Typical Order ($)": "$10,000",
+      "Participation Rate (%)": 0.5,
+      "Estimated Impact Penalty (%)": 0.3535533905932738,
+      "Modelled Net Return (%)": 16.36956798969579,
+      "Modelled Sharpe": 2.4439849642981715,
+      "Capacity Status": "OPTIMAL"
+    },
+    {
+      "AUM ($)": "$500,000",
+      "Typical Order ($)": "$50,000",
+      "Participation Rate (%)": 2.5,
+      "Estimated Impact Penalty (%)": 0.790569415042095,
+      "Modelled Net Return (%)": 15.932551965246965,
+      "Modelled Sharpe": 2.3787382459008013,
+      "Capacity Status": "VIABLE"
+    },
+    {
+      "AUM ($)": "$2,000,000",
+      "Typical Order ($)": "$200,000",
+      "Participation Rate (%)": 10.0,
+      "Estimated Impact Penalty (%)": 1.58113883008419,
+      "Modelled Net Return (%)": 15.141982550204872,
+      "Modelled Sharpe": 2.260705823492763,
+      "Capacity Status": "CONSTRAINED"
+    },
+    {
+      "AUM ($)": "$10,000,000",
+      "Typical Order ($)": "$1,000,000",
+      "Participation Rate (%)": 50.0,
+      "Estimated Impact Penalty (%)": 3.535533905932738,
+      "Modelled Net Return (%)": 13.187587474356322,
+      "Modelled Sharpe": 1.9689136282021524,
+      "Capacity Status": "CONSTRAINED"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "VERIFIED",
+  "dst_checks": [
+    {
+      "ny_time": "2026-01-15T09:30:00-05:00",
+      "utc_time": "2026-01-15T14:30:00+00:00",
+      "offset_hours": -5.0
+    },
+    {
+      "ny_time": "2026-06-15T09:30:00-04:00",
+      "utc_time": "2026-06-15T13:30:00+00:00",
+      "offset_hours": -4.0
+    }
+  ],
+  "session_schedule": {
+    "pre_market_start_et": "04:00",
+    "regular_market_open_et": "09:30",
+    "regular_market_close_et": "16:00",
+    "post_market_end_et": "20:00",
+    "weekend_trading": false,
+    "underlying_market": "NYSE/NASDAQ",
+    "rtoken_weekend_policy": "rTokens trade 24/7 on Bitget; underlying is CLOSED with reference_age_seconds increasing"
+  }
+}
